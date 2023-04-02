@@ -1,3 +1,4 @@
+## Description
 Reverse engineering of the RS485 protocol used in the NordElettronica NE334 control panel for controlling the electronics main unit of the camper van.
 
 More information about the data packet format can be found in the [spec.md](spec.md) file.
@@ -15,3 +16,11 @@ Available endpoints are:
 | /pump |  switch pump on/off |
 | /in |  switch indoor light on/off |
 | /out |  switch outdoor light on/off |
+
+
+
+## Disclaimer
+
+All names, trademarks, and copyrights belong to the respective manufacturers.
+
+This project has been created for demonstration purposes only, to show how the RS485 bus can be interfaced. The authors of this project do not claim any ownership over the names, trademarks, or copyrights of the respective manufacturers.
