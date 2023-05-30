@@ -1,7 +1,7 @@
 # RS485 bus protocol of NordElettronica NE334
 
 ## Serial config
-8N1 with 19200 baud
+8N1 with 38400 baud
 
 ## Example message
 
