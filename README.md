@@ -3,6 +3,11 @@ Reverse engineering of the RS485 protocol used in the NordElettronica NE334 cont
 
 More information about the data packet format can be found in the [spec.md](spec.md) file.
 
+### Arduino example implementation for ESP8266
+See [arduino/README.md](arduino/README.md) for more information.
+
+### Python example implementation
+
 For a reference implementation see the [flask_server.py](flask_server.py) file.
 NOTE: This is a work in progress, not yet fully functional and a complete mess.
 
@@ -16,8 +21,6 @@ Available endpoints are:
 | /pump |  switch pump on/off |
 | /in |  switch indoor light on/off |
 | /out |  switch outdoor light on/off |
-
-
 
 ## Disclaimer
 
