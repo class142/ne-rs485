@@ -1,12 +1,12 @@
-## Description
+# Description
 Reverse engineering of the RS485 protocol used in the NordElettronica NE334 control panel for controlling the electronics main unit of the camper van.
 
 More information about the data packet format can be found in the [spec.md](spec.md) file.
 
-### Arduino example implementation for ESP8266
+## Arduino example implementation for ESP8266
 See [arduino/README.md](arduino/README.md) for more information.
 
-### Python example implementation
+## Python example implementation
 
 For a reference implementation see the [flask_server.py](flask_server.py) file.
 NOTE: This is a work in progress, not yet fully functional and a complete mess.
@@ -22,7 +22,36 @@ Available endpoints are:
 | /in |  switch indoor light on/off |
 | /out |  switch outdoor light on/off |
 
-## Disclaimer
+## Hardware
+
+The RS485 bus is connected to the main electronics unit via a 4-pin connector.
+
+Pinout (colors might differ):
+| Pin | Color | Usage |
+| --- | --- | --- |
+| 1 | brown | +12V |
+| 2 | green | B |
+| 3 | yellow | A |
+| 4 | white | GND |
+
+Note:
+Original plug is not marked/numbered necessarily, but you can count the pins from left to right looking from behind where the cable goes in, with the two little "latching noses" pointing up and the "locking hook" pointing down.
+
+When in doubt, use a multimeter to check for polarity on pin 1 and 4.
+If you don't receive any data, try swapping A and B.
+
+Plug:
+- Lumberg 3114 04 VP15 (housing)
+- Lumberg 3111 03 L (contacts)
+
+Pin header:
+- Lumberg 2,5 MSF 04 (straight)
+- Lumberg 2,5 MSFW 04 (angled)
+
+Wire used for prototyping (different coloring):
+- Lapp Kabel ÖLFLEX CLASSIC 110 4x0,5mm² 1119004
+
+# Disclaimer
 
 All names, trademarks, and copyrights belong to the respective manufacturers.
 
