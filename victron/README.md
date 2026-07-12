@@ -22,7 +22,7 @@ and the standard paths for that class, so a tank cannot live under a battery ser
 | `com.victronenergy.tank.ne355_fresh` | tank | 0 | Fresh-water level (`/Level`, `/Capacity`, `/Remaining`) |
 | `com.victronenergy.tank.ne355_waste` | tank | 1 | Grey/waste level (binary full/empty) |
 | `com.victronenergy.battery.ne355_car` | battery | 20 | Starter/vehicle battery voltage |
-| `com.victronenergy.battery.ne355_house` | battery | 21 | Service/auxiliary battery voltage |
+| `com.victronenergy.battery.ne355_aux` | battery | 21 | Service/auxiliary battery voltage |
 | `com.victronenergy.switch.ne355` | switch | 30 | Interior light, exterior light, water pump (read + control) |
  
 Lights and the pump are **controllable** from the GUI when TX is wired to the bus (see
@@ -128,18 +128,6 @@ svc -u /service/dbus-ne355
 svstat /service/dbus-ne355
 ```
  
-### `run` script
- 
-Daemontools supervises the service and restarts it if it exits. The wait loop avoids a
-restart storm before the tty appears at boot:
- 
-```sh
-#!/bin/sh
-exec 2>&1
-while [ ! -e /dev/ttyNE355 ]; do sleep 1; done
-exec python3 /opt/victronenergy/dbus-ne355/dbus-ne355-driver.py
-```
- 
 ### Managing the service
  
 ```sh
@@ -206,7 +194,7 @@ alternation (`FF000000FF` dominant, `FF4000003F` every ~16th poll) at ~100 ms.
 ```sh
 dbus -y                                                         # list all services
 dbus -y com.victronenergy.tank.ne355_fresh /Level GetValue
-dbus -y com.victronenergy.battery.ne355_house /Dc/0/Voltage GetValue
+dbus -y com.victronenergy.battery.ne355_aux /Dc/0/Voltage GetValue
 dbus -y com.victronenergy.switch.ne355 /Debug/LastMessage GetValue   # raw 20-byte frame
 dbus -y com.victronenergy.switch.ne355 /SwitchableOutput/pump/State SetValue 1  # test TX
 ```
