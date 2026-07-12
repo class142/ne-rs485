@@ -3,6 +3,8 @@ Reverse engineering of the RS485 protocol used in the NordElettronica NE334 cont
 
 More information about the data packet format can be found in the [spec.md](spec.md) file.
 
+For the **NE185 / NE187** variant (field-tested on a real motorhome), see [spec_ne185.md](spec_ne185.md) — the NE334 command set carries over unchanged, but the status frame layout, checksum and idle-poll behaviour differ.
+
 ## Arduino example implementation for ESP8266
 See [arduino/README.md](arduino/README.md) for more information.
 
