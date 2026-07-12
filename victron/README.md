@@ -1,4 +1,3 @@
-Readme · MD
 # dbus-ne355 — NordElettronica NE355 → Victron Venus OS
  
 A Venus OS D-Bus service that reads a **NordElettronica NE355** RV control panel over
