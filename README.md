@@ -3,6 +3,9 @@ Reverse engineering of the RS485 protocol used in the NordElettronica NE334 cont
 
 More information about the data packet format can be found in the [spec.md](spec.md) file.
 
+## Victron Venus OS D-Bus service example implementation
+See [victron/README.md](victron/README.md) for more information.
+
 ## Arduino example implementation for ESP8266
 See [arduino/README.md](arduino/README.md) for more information.
 
