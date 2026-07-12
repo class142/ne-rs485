@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", ATTRS{serial}=="AG0JNN11", ENV{VE_SERVICE}="ignore", SYMLINK+="ttyNE355"
