@@ -5,6 +5,9 @@ More information about the data packet format can be found in the [spec.md](spec
 
 For the **NE185 / NE187** variant (field-tested on a real motorhome), see [spec_ne185.md](spec_ne185.md) — the NE334 command set carries over unchanged, but the status frame layout, checksum and idle-poll behaviour differ.
 
+## Victron Venus OS D-Bus service example implementation
+See [victron/README.md](victron/README.md) for more information.
+
 ## Arduino example implementation for ESP8266
 See [arduino/README.md](arduino/README.md) for more information.
 
